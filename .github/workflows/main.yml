@@ -1,6 +1,6 @@
 name: CPSP-workshop
-on: 
-  push: 
+on:
+  push:
     branches:
      - master
 jobs:
@@ -14,8 +14,9 @@ jobs:
        uses: actions/checkout@v2
    
      - name: Run Bridgecrew
-       id: Bridgecrew uses: bridgecrewio/bridgecrew-action@master
-        env: 
-          PRISMA_API_URL: https://api3.prismacloud.io 
-        with: 
+       id: Bridgecrew
+       uses: bridgecrewio/bridgecrew-action@master
+        env:
+          PRISMA_API_URL: https://api3.prismacloud.io
+        with:
           api-key: ${{ secrets.BC_API_KEY }}
